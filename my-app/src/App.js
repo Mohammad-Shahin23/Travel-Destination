@@ -1,12 +1,41 @@
 // import logo from './logo.svg';
 // import './App.css';
-import Home from "./components/home/Home";
+// import Home from "./components/home/Home";
+
+// function App() {
+//   return (
+//     <div className="App">
+
+//       <Home/>
+      
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import './App.css';
+import Home from './components/home/Home';
+import {Routes,Route} from 'react-router-dom';
+import TourDetails from './components/TourDetails/TourDetails';
+import Header from './components/header/ Header';
+
+
+ 
 
 function App() {
   return (
-    <div className="App">
-      <Home/>
-      
+    <div>
+      <Header/>
+      <Routes>
+        <Route path = "/"  element={<Home/>} ></Route>
+        <Route path = "/city/:id" element={<TourDetails/>}></Route>
+      </Routes>
+
+
+
     </div>
   );
 }
