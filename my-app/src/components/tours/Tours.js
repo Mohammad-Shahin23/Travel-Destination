@@ -1,20 +1,57 @@
+import Tour from './tour/Tour'
 
-function Target(props){
-    console.log(props.arryData[0])
-    return(
+const data = require('../../data/ db.json')
+
+function Tours() {
+    return (
         <>
-            <h2>Cities</h2>
-            {props.arryData.map((item)=>{
-                return (
-                    <div key={item.ID}>
-                        <h3>{item.name}</h3>
-                        <img src={item.image} alt={item.name}></img>
-                        <hr/>
-                    </div>
-                )
-            })}
+
+
+                {data.map((item) => {
+                    return (
+                        <Tour key={item.id} tour={item} />
+                    )
+                })}
+
         </>
     )
 }
+export default Tours;
 
-export default Target;
+
+
+
+
+
+
+// import Tour from "../tours/tour/Tour"
+// const data = require ("../../data/ db.json");
+// function Tours(){
+    
+//     return(
+//         <>
+//             <Tour arryData={data} />
+//         </>
+//     )
+// }
+
+// export default Tours;
+
+
+
+
+
+// import Target from "./tour/Tour";
+
+// function Tours(){
+    
+//     return(
+//         <>
+//          <Target/>
+         
+            
+//         </>
+//     )
+// }
+
+// export default Tours;
